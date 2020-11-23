@@ -1,0 +1,21 @@
+leetcode - https://leetcode.com/problems/find-the-duplicate-number/submissions/
+
+
+int findDuplicate(vector<int>& nums) {
+        int index = 0;
+        int n = nums.size();
+        for (int i = 0; i < n; i++)
+        {
+            index = nums[i] % n;
+            nums[index] += n;
+        }
+        int dupli;
+        for (int i = 0; i < n; i++)
+        {
+            if (nums[i] / n >= 2)
+            {
+                dupli = i; //for multiple duplicate write cout<<i;
+            }
+        }
+        return dupli;
+    }
